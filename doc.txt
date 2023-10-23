@@ -1,0 +1,11 @@
+# open front-end
+cd Front
+npm start
+
+# open back-end
+cd Back
+# then following the setup instruction in doc.txt in Back/ folder
+
+# open dummy-back-end
+cd dummy-backend
+npm start
