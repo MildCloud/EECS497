@@ -1,0 +1,8 @@
+sqlite3 var/data.sqlite3 < sql/init.sql
+
+conda deactivate
+python3 -m venv env
+source env/bin/activate
+pip install -r requirements.txt
+
+flask --app instru_ex_497 --debug run --host 0.0.0.0 --port 8080
