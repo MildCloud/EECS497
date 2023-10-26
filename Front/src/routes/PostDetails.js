@@ -34,7 +34,12 @@ function PostDetails() {
 export default PostDetails;
 
 export async function loader({params}) {
+  try{
   const response = await fetch('http://localhost:8080/posts/' + params.postId);
   const resData = await response.json();
   return resData.post;
+  } catch(err) {
+    console.log(err);
+    return null;
+  }
 }
