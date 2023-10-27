@@ -1,11 +1,24 @@
 import flask
 import instru_ex_497
-
+current_app = instru_ex_497.app
 
 def _corsify_actual_response(response):
     response.headers.add("Access-Control-Allow-Origin", "*")
     return response
 
+@instru_ex_497.app.route('/uploads/<path:name>', methods=['GET'])
+def show_file(name):
+    """Show the file with the given name, if it exists."""
+    # if not user.is_logged_in():
+    #     flask.abort(403)
+    print(current_app.config['UPLOAD_FOLDER'])
+    print(name)
+    return flask.send_from_directory(
+        current_app.config['UPLOAD_FOLDER'],
+        name,
+        as_attachment=True
+    )
+    
 @instru_ex_497.app.route('/posts/:id')
 def show_post():
     db = instru_ex_497.model.get_db()
