@@ -1,4 +1,7 @@
 sqlite3 var/data.sqlite3 < sql/init.sql
+(may use shell script here
+1. chmod +x bin/instru_ex_497db 
+2. ./bin/instru_ex_497db create)
 
 conda deactivate
 python3 -m venv env
