@@ -6,6 +6,10 @@ Front/.pnp
 # testing
 Front/coverage
 
+# data
+dummy-backend/posts.json
+
+
 # production
 /build
 
