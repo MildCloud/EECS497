@@ -6,6 +6,7 @@ npm start
 cd Back
 # then following the setup instruction in doc.txt in Back/ folder
 
+.. dummy-back-end is currently unused
 # open dummy-back-end
 cd dummy-backend
 npm start

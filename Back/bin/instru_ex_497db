@@ -28,6 +28,7 @@ case $1 in
   "reset")
     rm -rf var/data.sqlite3
     sqlite3 var/data.sqlite3 < sql/init.sql
+    rm -rf var/uploads/*
     ;;
 
   *)

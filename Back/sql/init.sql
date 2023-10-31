@@ -16,9 +16,3 @@ CREATE TABLE POSTS(
     img_src VARCHAR(250) NOT NULL,
     FOREIGN KEY(author) REFERENCES users(username)
 );
-INSERT INTO users(username, fullname)
-VALUES ('awdeorio', 'Andrew DeOrio');
-INSERT INTO POSTS(title, body, author, description, img_src)
-VALUES ('My first post', 'This is the body of my first post', 'awdeorio', 'This is the description of my first post', '1.jpg');
-INSERT INTO POSTS(title, body, author, description, img_src)
-VALUES ('My Second post', 'This is the body of my second post', 'awdeorio', 'This is the description of my second post', '1.jpg');
