@@ -1,4 +1,4 @@
-from flask import Flask, request, jsonify, send_from_directory
+from flask import Flask, request, jsonify, send_from_directory, json
 from flask_cors import CORS
 from werkzeug.utils import secure_filename
 import os
@@ -18,6 +18,15 @@ ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg', 'gif'}
 def _corsify_actual_response(response):
     response.headers.add("Access-Control-Allow-Origin", "*")
     return response
+
+@instru_ex_497.app.route('/login', methods=['POST'])
+def handle_login():
+    print('request.header', request.headers)
+    print('request', request.values)
+    print('request.form', request.form)
+    print('request.content_length', request.content_length)
+    print('request.content_type', request.content_type)
+    return _corsify_actual_response(flask.jsonify({}))
 
 @instru_ex_497.app.route('/uploads/<path:name>', methods=['GET'])
 def show_file(name):
@@ -53,8 +62,6 @@ def allowed_file(filename):
 
 @instru_ex_497.app.route('/submit_post', methods=['POST'])
 def submit_post():
-    print("hihihi")
-    # print(request.form())
     info_dict = request.form.to_dict()
     name = info_dict['name']
     price = info_dict['price']
@@ -69,6 +76,6 @@ def submit_post():
         "INSERT OR REPLACE INTO POSTS(author, name, price, description, img_src) "
         "VALUES(?,?,?,?,?)",
         ('Author', name, price, description ,filename))
-    return "hihihi"
+    return _corsify_actual_response(flask.jsonify({}))
 
     
