@@ -56,25 +56,19 @@ def submit_post():
     print("hihihi")
     # print(request.form())
     info_dict = request.form.to_dict()
-    author = info_dict['author']
+    name = info_dict['name']
     price = info_dict['price']
-    body = info_dict['body']
+    description = info_dict['description']
     image = request.files.get('instrumentImage')
     print(request.form.to_dict())
-    print(author, price, body)
     filename = secure_filename(image.filename)
     path = os.path.join(current_app.config['UPLOAD_FOLDER'], filename)
     image.save(path)
     db = instru_ex_497.model.get_db()
-    title = "test_title"
     db.execute(
-        "INSERT OR REPLACE INTO users(username, fullname)"
-        "VALUES (?, ?)", 
-        (author, author))
-    db.execute(
-        "INSERT OR REPLACE INTO POSTS(title, body, author, description, img_src) "
+        "INSERT OR REPLACE INTO POSTS(author, name, price, description, img_src) "
         "VALUES(?,?,?,?,?)",
-        (filename, body, author, body ,filename))
+        ('Author', name, price, description ,filename))
     return "hihihi"
 
     

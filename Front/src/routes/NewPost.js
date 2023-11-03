@@ -13,15 +13,15 @@ function NewPost() {
       >
         <p>
           <label htmlFor="name">Instrument Name</label>
-          <input type="text" id="name" name="author" required />
+          <input type="text" id="name" name="name" required />
         </p>
         <p>
           <label htmlFor="price">Price</label>
           <input type="text" id="price" name="price" required />
         </p>
         <p>
-          <label htmlFor="body">Description</label>
-          <textarea id="body" name="body" required rows={3} />
+          <label htmlFor="description">Description</label>
+          <textarea id="description" name="description" required rows={3} />
         </p>
         <p>
           <label htmlFor="Instrument Image">Instrument Image</label>

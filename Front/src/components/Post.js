@@ -7,11 +7,11 @@ function Post(props) {
   return (
     <li className={classes.post}>
       <Link to={props.id}>
-        <p className={classes.author}>{props.author}</p>
-        <p className={classes.text}>{props.body}</p>
+        <p className={classes.name}>{props.author}</p>
+        <p className={classes.price}>{props.price}</p>
         <p className={classes.description}>{props.description}</p>
-        <p className={classes.img}>
-          <img src={img_src} alt="instrument"></img>
+        <p>
+          <img className={classes.image} src={img_src} alt="instrument"></img>
         </p>
       </Link>
     </li>
