@@ -7,8 +7,10 @@ import { Link, Form, redirect } from "react-router-dom";
 function Login(props) {
     const [name, setName] = useState('');
     const [password, setPassword] = useState('');
+    const [loginFailed, setLoginFailed] = useState(false);
 
-    function handleSubmit () {
+    function handleSubmit (event) {
+        event.preventDefault()
         const data = {
             'name': name,
             'password': password
@@ -17,14 +19,20 @@ function Login(props) {
         fetch("http://localhost:8080/login", {
                 method: "POST",
                 headers: {'Content-Type': 'application/json'},
-                body: JSON.stringify({asdf: "asdfadsf"})
+                body: JSON.stringify(data)
+        })
+        .then((response) => {
+            if (!response.ok) throw Error(response.statusText);
+            props.setLogin(true);
+        })
+        .catch((error) => {
+            console.log(error);
+            setLoginFailed(true)
         });
-        // console.log('response', response);
-        // props.setLogin(true);
     }
 
     return (
-        <Model>
+        <div className={classes.login}>
             <Form
                 className={classes.form}
                 onSubmit={handleSubmit}
@@ -35,13 +43,16 @@ function Login(props) {
                 </p>
                 <p>
                 <label>Password</label>
-                <input type="text" id="password" value={password} onChange={e => setPassword(e.target.value)} required />
+                <input type="password" id="password" value={password} onChange={e => setPassword(e.target.value)} required />
                 </p>
                 <p className={classes.actions}>
                 <button type="submit">Submit</button>
                 </p>
             </Form>
-        </Model>
+            {loginFailed && <div className={classes.loginFailed}>
+                <h1>Account Not Found</h1>
+            </div>}
+        </div>
     );
 }
 

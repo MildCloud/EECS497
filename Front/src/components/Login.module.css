@@ -1,3 +1,11 @@
+.login {
+    position: absolute;
+    top: 20vh;
+    left: 40vw;
+    border-radius: 6px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
 .form {
     background-color: #6233b9;
     padding: 1rem;
@@ -35,4 +43,10 @@
   
 .form button:hover {
     background-color: #23014a;
+}
+
+.loginFailed {
+    color: red;
+    background-color: #c4a9e4;
+    padding: 10px;
 }
