@@ -42,10 +42,8 @@ export default NewPost;
 
 export async function action({ request }) {
   const formData = await request.formData();
+  console.log('formData', formData);
   const postData = Object.fromEntries(formData);
-  for (let [key, value] of formData) {
-    console.log(`${key}: ${value}`);
-  }
   console.log(postData);
   await fetch("http://localhost:8080/submit_post", {
     method: "POST",

@@ -7,6 +7,7 @@ import NewPost, { action as newPostAction } from "./routes/NewPost";
 import RootLayout from "./routes/RootLayout";
 import Posts, { loader as postsLoader } from "./routes/Posts";
 import PostDetails, { loader as postDetailsLoader } from "./routes/PostDetails";
+import Login from "./components/Login";
 
 const router = createBrowserRouter([
   {
@@ -27,7 +28,7 @@ const router = createBrowserRouter([
         ],
       },
     ],
-  },
+  }
 ]);
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
