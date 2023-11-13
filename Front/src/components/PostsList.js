@@ -10,7 +10,7 @@ function PostsList(props) {
       {
         posts.length > 0 ? (
             <ul className={classes.posts}>
-              {posts.map((post) => <Post key={post.id} id={post.id} author = {post.author} price = {post.price} description = {post.description} img_src = {post.img_src}/>)}
+              {posts.map((post) => <Post key={post.id} id={post.id} name={post.name} author={post.author} price={post.price} description={post.description} img_src = {post.img_src}/>)}
             </ul>
           ):(
             <div style={{ textAlign: 'center', color: 'white' }}>

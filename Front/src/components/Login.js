@@ -38,6 +38,11 @@ function Login(props) {
                 onSubmit={handleSubmit}
             >
                 <p>
+                    <label>
+                        LOGIN
+                    </label>
+                </p>
+                <p>
                 <label>Username</label>
                 <input type="text" id="name" value={name} onChange={e => setName(e.target.value)} required />
                 </p>
