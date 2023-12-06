@@ -13,15 +13,15 @@ function NewPost() {
       >
         <p>
           <label htmlFor="name">Instrument Name</label>
-          <input type="text" id="name" name="author" required />
+          <input type="text" id="name" name="name" required />
         </p>
         <p>
           <label htmlFor="price">Price</label>
           <input type="text" id="price" name="price" required />
         </p>
         <p>
-          <label htmlFor="body">Description</label>
-          <textarea id="body" name="body" required rows={3} />
+          <label htmlFor="description">Description</label>
+          <textarea id="description" name="description" required rows={3} />
         </p>
         <p>
           <label htmlFor="Instrument Image">Instrument Image</label>
@@ -42,10 +42,8 @@ export default NewPost;
 
 export async function action({ request }) {
   const formData = await request.formData();
+  console.log('formData', formData);
   const postData = Object.fromEntries(formData);
-  for (let [key, value] of formData) {
-    console.log(`${key}: ${value}`);
-  }
   console.log(postData);
   await fetch("http://localhost:8080/submit_post", {
     method: "POST",

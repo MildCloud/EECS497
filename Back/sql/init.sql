@@ -2,17 +2,20 @@ PRAGMA foreign_keys = ON;
 
 CREATE TABLE users(
     username VARCHAR(20) NOT NULL,
-    fullname VARCHAR(40) NOT NULL,
+    password VARCHAR(40) NOT NULL,
     PRIMARY KEY(username)
 );
 
-CREATE TABLE POSTS(
+CREATE TABLE posts(
     id INTEGER PRIMARY KEY AUTOINCREMENT,
-    title VARCHAR(100) NOT NULL,
-    body TEXT NOT NULL,
     created TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
     author VARCHAR(20) NOT NULL,
+    name VARCHAR(20) NOT NULL,
+    price VARCHAR(20) NOT NULL,
     description VARCHAR(250) NOT NULL,
     img_src VARCHAR(250) NOT NULL,
     FOREIGN KEY(author) REFERENCES users(username)
 );
+
+INSERT INTO users (username, password)
+VALUES ('Author', 'password');

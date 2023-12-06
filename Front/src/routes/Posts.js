@@ -14,11 +14,10 @@ function Posts() {
 
 export async function loader() {
   try {
-  console.log("here");
   const response = await fetch('http://localhost:8080/posts');
-  console.log(response);
+  // console.log(response);
   const resData = await response.json();
-  console.log(resData);
+  // console.log(resData);
   return resData;
   }catch(err) {
     console.log(err);
