@@ -14,6 +14,16 @@ function MainHeader() {
         </Link>
       </h1>
       <p>
+        <Link to="/guitar" className={classes.button}>
+          Community
+        </Link>
+      </p>
+      <p>
+        <Link to="/guitar" className={classes.button}>
+          Groups
+        </Link>
+      </p>
+      <p>
         <Link to="/create-post" className={classes.button}>
           <MdPostAdd size={18} />
           New Post
