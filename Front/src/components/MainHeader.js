@@ -8,8 +8,10 @@ function MainHeader() {
   return (
     <header className={classes.header}>
       <h1 className={classes.logo}>
+        <Link to="/" className={classes.button}>
         <FaMusic />
-        Instrument Exchange 497
+        UMst
+        </Link>
       </h1>
       <p>
         <Link to="/create-post" className={classes.button}>

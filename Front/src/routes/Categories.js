@@ -11,34 +11,49 @@ function Categories() {
             <Link to={'/guitar'} className={classes.catLink}>
               <p className={classes.name}>
                 Guitar
+                <figure>
+                  <img src="guitar" alt="Guitar" className={classes.image} />
+                </figure>
               </p>
             </Link>
           </li>
           <li className={classes.category}>
-            <Link to={''} className={classes.catLink}>
+            <Link to={'/piano'} className={classes.catLink}>
               <p className={classes.name}>
-                Panion
+                Piano
+                <figure>
+                  <img src="piano" alt="Piano" className={classes.image} />
+                </figure>
               </p>
             </Link>
           </li>
           <li className={classes.category}>
-            <Link to={''} className={classes.catLink}>
+            <Link to={'/violin'} className={classes.catLink}>
               <p className={classes.name}>
                 Violin
               </p>
+              <figure>
+                <img src="violin" alt="Violin" className={classes.image} />
+              </figure>
             </Link>
           </li>
           <li className={classes.category}>
-            <Link to={''} className={classes.catLink}>
+            <Link to={'/drum'} className={classes.catLink}>
               <p className={classes.name}>
                 Drum
+                <figure>
+                  <img src="drum.jpeg" alt="Drum" className={classes.image} />
+                </figure>
               </p>
             </Link>
           </li>
           <li className={classes.category}>
-            <Link to={''} className={classes.catLink}>
+            <Link to={'saxophone'} className={classes.catLink}>
               <p className={classes.name}>
-                Guitar
+                Saxophone
+                <figure>
+                  <img src="saxophone" alt="Saxophone" className={classes.image} />
+                </figure>
               </p>
             </Link>
           </li>

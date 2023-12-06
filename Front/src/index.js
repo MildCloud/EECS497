@@ -31,6 +31,54 @@ const router = createBrowserRouter([
           },
         ]
       },
+      {
+        path: "/piano",
+        element: <Posts />,
+        loader: postsLoader,
+        children: [
+          {
+            path: "/piano/:postId",
+            element: <PostDetails />,
+            loader: postDetailsLoader,
+          },
+        ]
+      },
+      {
+        path: "/violin",
+        element: <Posts />,
+        loader: postsLoader,
+        children: [
+          {
+            path: "/violin/:postId",
+            element: <PostDetails />,
+            loader: postDetailsLoader,
+          },
+        ]
+      },
+      {
+        path: "/drum",
+        element: <Posts />,
+        loader: postsLoader,
+        children: [
+          {
+            path: "/drum/:postId",
+            element: <PostDetails />,
+            loader: postDetailsLoader,
+          },
+        ]
+      },
+      {
+        path: "/saxophone",
+        element: <Posts />,
+        loader: postsLoader,
+        children: [
+          {
+            path: "/saxophone/:postId",
+            element: <PostDetails />,
+            loader: postDetailsLoader,
+          },
+        ]
+      },
     ],
   }
 ]);
